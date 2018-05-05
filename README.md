@@ -7,3 +7,7 @@
 ### Abstract Factory
 
 *abstract-factory.js*
+
+### Prototype
+
+*prototype.js*
