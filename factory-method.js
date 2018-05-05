@@ -18,20 +18,23 @@ class JavaDev extends Developer {
 }
 
 class DeveloperFactory {
-  createDeveloper(type) {
-    switch (type) {
-      case 'js':
-        return new JsDev();
-      case 'java':
-        return new JavaDev();
-      default:
-        throw new Error('No such developer');
-    }
+  createDeveloper() {
+    throw new Error('abstract method');
+  }
+}
+class JsDeveloperFactory {
+  createDeveloper() {
+    return new JsDev();
+  }
+}
+class JavaDeveloperFactory {
+  createDeveloper() {
+    return new JavaDev();
   }
 }
 
-const factory = new DeveloperFactory();
+const jsFactory = new JsDeveloperFactory();
 
-const jsDev = factory.createDeveloper('js');
+const jsDev = jsFactory.createDeveloper();
 
 jsDev.write(); // I am writing in JavaScript
